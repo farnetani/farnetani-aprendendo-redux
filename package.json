@@ -10,7 +10,9 @@
     "postcss-preset-env": "^6.7.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3"
+    "react-redux": "^7.2.3",
+    "react-scripts": "4.0.3",
+    "redux": "^4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,9 +20,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src --max-warnings=0",
-    "build:tailwind": "tailwindcss build src/index.css -o src/tailwind.output.css",
+    "build:tailwind": "tailwindcss build src/index.scss -o src/tailwind.output.scss",
+    "build:tailwind-postcss": "postcss src/index.scss -o src/tailwind.output.scss",
     "prestart": "npm run build:tailwind",
-    "prebuild": "npm run build:tailwind"
+    "prebuild": "npm run build:tailwind",
+    "build:css": "postcss src/index.scss -o src/tailwind.output.scss"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +52,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-redux": "^7.1.16",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
     "autoprefixer": "^10.2.5",
@@ -57,8 +62,11 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "node-sass": "^5.0.0",
+    "postcss-cli": "^8.3.1",
     "prettier": "^2.2.1",
     "tailwindcss": "^2.0.4",
+    "typed-css-modules-webpack-plugin": "^0.2.0",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   }

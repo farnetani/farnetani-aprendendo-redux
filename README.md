@@ -1,5 +1,5 @@
 <h3 align="center">
-  Template React com TailwindCSS + Eslint Prettier Jest
+  Aprendendo Redux
 </h3>
 
 <p align="center">
