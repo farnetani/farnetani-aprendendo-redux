@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import React from 'react'
 import Catalog from './components/Catalog'
+import { Cart } from './components/Cart'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <div className="flex flex-col items-center justify-start flex-1 h-full min-h-screen p-4 overflow-x-hidden overflow-y-auto">
             <div className="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden my-4 p-10">
               <Catalog />
+              <Cart />
             </div>
           </div>
         </main>
