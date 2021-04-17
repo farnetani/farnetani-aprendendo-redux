@@ -41,6 +41,10 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
         //   items: [...state.items, { product, quantity: 1 }] // Aqui depois da virgula significa que estamos adicionando o novo elemento
         // }
       }
+      case 'ADD_PRODUCT_TO_CART_FAILURE': {
+        console.log('failure', action.payload)
+        break
+      }
       default: {
         return draft
       }

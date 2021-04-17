@@ -2,7 +2,11 @@ import { AxiosResponse } from 'axios'
 import { all, takeLatest, select, call, put } from 'redux-saga/effects'
 import { IState } from '../..'
 import api from '../../../services/api'
-import { addProductCartRequest, addProductToCartSuccess } from './actions'
+import {
+  addProductCartRequest,
+  addProductToCartFailure,
+  addProductToCartSuccess
+} from './actions'
 
 type CheckProductStockRequest = ReturnType<typeof addProductCartRequest>
 
@@ -31,6 +35,7 @@ function* checkProductStock({ payload }: CheckProductStockRequest) {
     yield put(addProductToCartSuccess(product))
   } else {
     console.log('falta de estoque')
+    yield put(addProductToCartFailure(product.id))
   }
 }
 
